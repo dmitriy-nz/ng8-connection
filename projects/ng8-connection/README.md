@@ -1,24 +1,43 @@
-# Ng8Connection
+# Internet Connection Monitoring Service (Angular v8)
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.1.
+> Detects whether browser has an active internet connection or not in Angular application. 
 
-## Code scaffolding
+## Install
 
-Run `ng generate component component-name --project Ng8Connection` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project Ng8Connection`.
-> Note: Don't forget to add `--project Ng8Connection` or else it will be added to the default project in your `angular.json` file. 
+You can get it on npm.
 
-## Build
+```
+npm install ng8-connection-service --save
+```
 
-Run `ng build Ng8Connection` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Usage
 
-## Publishing
+1. Inject `ConnectionService` in Angular component's constructor.
+2. Subscribe to `monitor()` method to get push notification whenever internet connection status is changed.
 
-After building your library with `ng build Ng8Connection`, go to the dist folder `cd dist/ng8-connection` and run `npm publish`.
+```ts
+import {Component} from '@angular/core';
+import {Ng8ConnectionService} from 'ng8-connection.service';
 
-## Running unit tests
+@Component({
+  selector: 'ng8-connection-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'Ng8ConnectionLibrary';
+  status = 'ONLINE';
 
-Run `ng test Ng8Connection` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Further help
+  constructor(private connection: Ng8ConnectionService) {
+    this.connection.monitor().subscribe((status: boolean) => {
+      this.status = (status) ? 'ONLINE' : 'OFFLINE';
+    });
+  }
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+}
+
+
+```
+## License
+[MIT License](https://github.com/dmitriy-nz/ng8-connection/blob/master/LICENSE) © Dmitriy Nazarenko
