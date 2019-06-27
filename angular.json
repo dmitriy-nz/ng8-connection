@@ -115,6 +115,41 @@
           }
         }
       }
+    },
+    "Ng8Connection": {
+      "projectType": "library",
+      "root": "projects/ng8-connection",
+      "sourceRoot": "projects/ng8-connection/src",
+      "prefix": "Ng8Connection",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ng8-connection/tsconfig.lib.json",
+            "project": "projects/ng8-connection/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng8-connection/src/test.ts",
+            "tsConfig": "projects/ng8-connection/tsconfig.spec.json",
+            "karmaConfig": "projects/ng8-connection/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng8-connection/tsconfig.lib.json",
+              "projects/ng8-connection/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "Ng8ConnectionLibrary"
 }
