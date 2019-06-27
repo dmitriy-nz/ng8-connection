@@ -40,5 +40,3 @@ export class AppComponent {
 
 ```
 ## License
-
-[MIT License](https://github.com/ultrasonicsoft/ng-connection-service/blob/master/LICENSE) © Balram Chavan
