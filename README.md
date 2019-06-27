@@ -40,3 +40,4 @@ export class AppComponent {
 
 ```
 ## License
+[MIT License](https://github.com/dmitriy-nz/ng8-connection/blob/master/LICENSE) © Dmitriy Nazarenko

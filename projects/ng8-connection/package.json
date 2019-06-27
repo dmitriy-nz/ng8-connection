@@ -1,6 +1,25 @@
 {
   "name": "ng8-connection",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "author": "Dmitriy Nazarenko",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dmitriy-nz/ng8-connection.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "detect",
+    "internet",
+    "connection",
+    "angular",
+    "angular 8",
+    "service",
+    "HTTP"
+  ],
+  "bugs": {
+    "url": "https://github.com/dmitriy-nz/ng8-connection/issues"
+  },
+  "homepage": "https://github.com/dmitriy-nz/ng8-connection",
   "peerDependencies": {
     "@angular/common": "^8.0.1",
     "@angular/core": "^8.0.1"
